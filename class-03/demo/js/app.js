@@ -349,16 +349,22 @@ let horse=prompt('do horses fly?');
 //    horse= prompt('please write yes or y');
 // }
 
-if (horse==='yes' || horse==='y') {
+function question3() {
+    if (horse==='yes' || horse==='y') {
    
-    alert('are you okay?');
-
-}else if( horse==='no'||horse==='n'){
-    alert('wow really ');
-    score++;
-}else{
-    alert('please write yes or no');
+        alert('are you okay?');
+    
+    }else if( horse==='no'||horse==='n'){
+        alert('wow really ');
+        score++;
+    }else{
+        alert('please write yes or no');
+    }  
 }
+question3();
+// 7
+// 7 functions
+
 
 
 // console.log(score);
