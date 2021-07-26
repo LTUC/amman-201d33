@@ -81,12 +81,12 @@ function Goat(name,src) {
   this.votes=0;
   // this.shown=0;
   // "this" refers to the object that is being created 
-  goats.push(this);
+  Goat.allGoats.push(this);
   // Goat.all.push(this);
 
 }
 
-let goats=[];
+let Goat.allGoats=[];
 // Goat.prototype.allGoats=[];
 // Goat.all=[];
 // console.log(Goat.all);
@@ -105,7 +105,7 @@ new Goat('sassy-goat', 'images/sassy-goat.jpg');//6
 // from w3 schools
 function getRandomIndex() {
   // 0=>6
-  return Math.floor(Math.random() * goats.length);
+  return Math.floor(Math.random() * Goat.allGoats.length);
 }
 
 console.log(getRandomIndex());
@@ -130,8 +130,8 @@ function renderTwoImages() {
 
 
   // console.log(goats[0].name);
-  leftImageElement.src=goats[leftImageIndex].source;
-  rightImageElement.src=goats[rightImageIndex].source;
+  leftImageElement.src=Goat.allGoats[leftImageIndex].source;
+  rightImageElement.src=Goat.allGoats[rightImageIndex].source;
 
 
 
@@ -171,12 +171,12 @@ function handleUserClick(event) {
 
     if (event.target.id==='left-image') {
 
-      goats[leftImageIndex].votes++;
-      console.log(goats[leftImageIndex]);
+      Goat.allGoats[leftImageIndex].votes++;
+      console.log(Goat.allGoats[leftImageIndex]);
 
     }else{
-      goats[rightImageIndex].votes++;
-      console.log(goats[rightImageIndex]);
+      Goat.allGoats[rightImageIndex].votes++;
+      console.log(Goat.allGoats[rightImageIndex]);
     }
 
     renderTwoImages();
@@ -185,13 +185,13 @@ function handleUserClick(event) {
 
     let list= document.getElementById('results-list');
 
-    for (let i = 0; i < goats.length; i++) {
+    for (let i = 0; i < Goat.allGoats.length; i++) {
       // const element = goats[i];
       let listItem=document.createElement('li');
 
       list.appendChild(listItem);
 
-      listItem.textContent=`${goats[i].name} has ${goats[i].votes} votes`
+      listItem.textContent=`${Goat.allGoats[i].name} has ${Goat.allGoats[i].votes} votes`
       
     }
 
