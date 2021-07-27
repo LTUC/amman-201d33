@@ -48,12 +48,13 @@ function getCoffeeOrders() {
   let parsedArr=JSON.parse(data)
   console.log(parsedArr);
 
-  // if the first time comiong to the page, make sure there will be data in the storage and then make it equal to the Coffee.drinks
+  // if the first time coming to the page, make sure there will be data in the storage and then make it equal to the Coffee.drinks
   if (parsedArr !==null) {
     // YOU can either do this But it wont have the prototype methods
-
     // Coffee.drinks=parsedArr;
 
+
+    // this will cause an error because there is NO prototype methods for the data coming from local storage
     // for (let i = 0; i < parsedArr.length; i++) {
     //  parsedArr[i].drinking();
     // }
